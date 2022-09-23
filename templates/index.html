@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content = "width = device-width, initial-scale = 1.0">
+    <meta http-equiv = "X-UA-Compatible" content = "ie = edge">
+    <title>Mission to Mars</title>
+    <link rel = "stylesheet" href = "https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class = "container-fluid">
+        <div class = "jumbotron text-center">
+            <h1><b>Mission to Mars</b></h1>
+            <p><a class = "btn btn-primary btn-lg" href = "/scrape" role = "button">Scrape New Data</a></p>
+        </div>
+
+        <div class = "container-fluid">
+            <div class = "col">
+                <h2 class = "heading"><b>Latest Mars News:</b></h2>
+                <h4 class = "article-title"><b>{{mars_dict.mars_title}}</b></h4>
+                <h5 class = "article-paragraph">{{mars_dict.mars_paragraph}}</h5>
+            </div>
+        </div>
+
+        <br>
+
+        <div class = "row">
+            <div class = "col">
+                <h2><b>Featured Mars Image:</b></h2>
+                <img src = "{{mars_dict.mars_image}}">
+            </div>
+        
+
+            <div class = "col">
+                <h2><b>Mars Facts:</b></h2>
+                <div class = "table">
+                    {{mars_dict.mars_table | safe}}
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="container-fluid">
+            <div class="col">
+              <h2 class = "heading"><b>Mars Hemispheres</b></h2>
+            </div>
+        </div>
+
+        <div class="card-group">
+            {% for hem in mars_dict.mars_hemispheres %}
+            <div class="card p-2">
+                <img src = "{{hem.img_url}}">
+                <div class="card-body">
+                    <h4 class="card-text"><b>{{hem.title}}</b></p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+</body>
+
+</html>
