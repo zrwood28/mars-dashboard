@@ -1,4 +1,4 @@
-# web-scraping-challenge
+# mars-dashboard
 Scraping data from various sites in order to create a Mission to Mars webpage. 
 
 ## Summary
